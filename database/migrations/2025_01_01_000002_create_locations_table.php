@@ -1,6 +1,6 @@
 <?php
 
-use App\Enums\LocationStatus;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->text('address')->nullable();
 
             $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
-            $table->string('status')->default(LocationStatus::Draft->value);
+            $table->string('status')->default('draft');
 
             $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete();
