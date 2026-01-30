@@ -118,6 +118,7 @@
                 width: 260px;
                 min-width: 260px;
                 height: 100vh;
+                height: 100dvh;
                 background: rgba(255, 255, 255, 0.7) !important;
                 backdrop-filter: blur(16px) !important;
                 -webkit-backdrop-filter: blur(16px) !important;
@@ -404,6 +405,12 @@
                 
                 .mobile-header {
                     display: flex;
+                }
+                
+                /* Lift bottom profile section on mobile to avoid browser UI overlap */
+                .user-profile {
+                    padding-bottom: 80px !important; 
+                    margin-bottom: env(safe-area-inset-bottom);
                 }
             }
             
