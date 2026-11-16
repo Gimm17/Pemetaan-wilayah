@@ -21,3 +21,10 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+.env.*
+!.env.example
+*.sqlite*
+database/database.sqlite
+public/build.zip
+GIT_PANDUAN.md
