@@ -1,48 +1,26 @@
-<div align="center">
+# Pemwil Palu — Web GIS Pemetaan Wilayah
 
-# 🗺️ Pemwil Palu — Sistem Informasi Geografis Pemetaan Wilayah
+Sistem Informasi Geografis (SIG) batas administratif dan titik lokasi **Kota Palu** dengan peta interaktif Leaflet, rendering multi-layer GeoJSON, deteksi duplikasi koordinat, dan audit perubahan.
 
-### Interactive GIS Regional Boundary & Location Mapping Platform for Kota Palu
+[![Live Map](https://img.shields.io/badge/OPEN_MAP-pemwilpalu.gimmhost.my.id-16A34A?style=for-the-badge)](https://pemwilpalu.gimmhost.my.id/)
+![Laravel 12](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet.js-GeoJSON-199900?style=for-the-badge&logo=leaflet&logoColor=white)
 
-[![Live Demo](https://img.shields.io/badge/Live-pemwilpalu.gimmhost.my.id-ccff00?style=for-the-badge&labelColor=0b0c10)](https://pemwilpalu.gimmhost.my.id/)
-[![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com/)
-[![Livewire](https://img.shields.io/badge/Livewire-Volt-FB70A9?style=for-the-badge&logo=livewire&logoColor=white)](https://livewire.laravel.com/)
-[![Leaflet](https://img.shields.io/badge/GIS-Leaflet.js%20%2B%20GeoJSON-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
+![Pemwil Palu Live Map](docs/screenshots/live-map.webp)
 
-*Web GIS platform built for Palu City regional boundary and spatial location management with multi-layer GeoJSON rendering, real-time filtering, Excel import, PDF export, and role-based access control.*
+### Fitur & Teknologi
 
-</div>
+| Modul | Detail | Paket / Tech |
+| :--- | :--- | :--- |
+| **Interactive Map** | `/map` & mode gelap, cek titik koordinat/NOP & layer batas | `Leaflet.js`, `GeoJSON`, `Alpine.js` |
+| **Data Explorer** | Tabel lokasi reaktif, filter pencarian & akses publik read-only | `Livewire / Volt`, `Tailwind CSS` |
+| **Import & Laporan** | Impor Excel massal (`/import`) & ekspor laporan PDF siap cetak | `maatwebsite/excel`, `dompdf` |
+| **Keamanan & Audit** | Manajemen role/user (`/users`, `/roles`) + histori aktivitas | `spatie/laravel-activitylog` |
 
----
-
-## ✨ Key Features
-
-- **Interactive Spatial Map (`/map`)** — Powered by **Leaflet.js** with dynamic AJAX spatial loading, exact location duplicate checks, and multi-layer GeoJSON boundary visualization.
-- **Public Read-Only Explorer & Livewire Data Table (`/locations`)** — Guests can browse map layers and search location directories smoothly.
-- **Authenticated CRUD & Bulk Excel Import (`/import`)** — Admins and Super Admins can create/edit/delete locations and import structured spreadsheets via `maatwebsite/excel`.
-- **RBAC & Activity Auditing** — Role & permission management (`/users`, `/roles`) backed by **Spatie Activitylog** and **DomPDF** report export.
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-| :--- | :--- |
-| **Backend** | Laravel 12, PHP 8.2+, Livewire / Volt |
-| **Frontend & GIS** | Alpine.js, Tailwind CSS, Leaflet.js, SweetAlert2 |
-| **Utilities** | `maatwebsite/excel`, `barryvdh/laravel-dompdf`, `spatie/laravel-activitylog` |
-| **Database** | MySQL / SQLite |
-
----
-
-## 🚀 Local Setup
+### Quick Start
 
 ```bash
-composer install
-npm install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate --seed
-npm run build
-php artisan serve
+composer install && npm install
+cp .env.example .env && php artisan key:generate
+php artisan migrate --seed && npm run build && php artisan serve
 ```
